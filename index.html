@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Build Grow Exit</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://unpkg.com/lucide@latest"></script>
+  <style>
+    @keyframes scroll {
+      0% { transform: translateX(0); }
+      100% { transform: translateX(-50%); }
+    }
+    .animate-scroll {
+      animation: scroll 20s linear infinite;
+    }
+  </style>
+<link id="all-fonts-link-font-geist" rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Geist:wght@300;400;500;600;700&display=swap"><style id="all-fonts-style-font-geist">.font-geist { font-family: 'Geist', sans-serif !important; }</style><link id="all-fonts-link-font-roboto" rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;600;700&display=swap"><style id="all-fonts-style-font-roboto">.font-roboto { font-family: 'Roboto', sans-serif !important; }</style><link id="all-fonts-link-font-montserrat" rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap"><style id="all-fonts-style-font-montserrat">.font-montserrat { font-family: 'Montserrat', sans-serif !important; }</style><link id="all-fonts-link-font-poppins" rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"><style id="all-fonts-style-font-poppins">.font-poppins { font-family: 'Poppins', sans-serif !important; }</style><link id="all-fonts-link-font-playfair" rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700;900&display=swap"><style id="all-fonts-style-font-playfair">.font-playfair { font-family: 'Playfair Display', serif !important; }</style><link id="all-fonts-link-font-instrument-serif" rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Instrument+Serif:wght@400;500;600;700&display=swap"><style id="all-fonts-style-font-instrument-serif">.font-instrument-serif { font-family: 'Instrument Serif', serif !important; }</style><link id="all-fonts-link-font-merriweather" rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Merriweather:wght@300;400;700;900&display=swap"><style id="all-fonts-style-font-merriweather">.font-merriweather { font-family: 'Merriweather', serif !important; }</style><link id="all-fonts-link-font-bricolage" rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@300;400;500;600;700&display=swap"><style id="all-fonts-style-font-bricolage">.font-bricolage { font-family: 'Bricolage Grotesque', sans-serif !important; }</style><link id="all-fonts-link-font-jakarta" rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap"><style id="all-fonts-style-font-jakarta">.font-jakarta { font-family: 'Plus Jakarta Sans', sans-serif !important; }</style><link id="all-fonts-link-font-manrope" rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600;700;800&display=swap"><style id="all-fonts-style-font-manrope">.font-manrope { font-family: 'Manrope', sans-serif !important; }</style><link id="all-fonts-link-font-space-grotesk" rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&display=swap"><style id="all-fonts-style-font-space-grotesk">.font-space-grotesk { font-family: 'Space Grotesk', sans-serif !important; }</style><link id="all-fonts-link-font-work-sans" rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Work+Sans:wght@300;400;500;600;700;800&display=swap"><style id="all-fonts-style-font-work-sans">.font-work-sans { font-family: 'Work Sans', sans-serif !important; }</style><link id="all-fonts-link-font-pt-serif" rel="stylesheet" href="https://fonts.googleapis.com/css2?family=PT+Serif:wght@400;700&display=swap"><style id="all-fonts-style-font-pt-serif">.font-pt-serif { font-family: 'PT Serif', serif !important; }</style><link id="all-fonts-link-font-geist-mono" rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Geist+Mono:wght@300;400;500;600;700&display=swap"><style id="all-fonts-style-font-geist-mono">.font-geist-mono { font-family: 'Geist Mono', monospace !important; }</style><link id="all-fonts-link-font-space-mono" rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&display=swap"><style id="all-fonts-style-font-space-mono">.font-space-mono { font-family: 'Space Mono', monospace !important; }</style><link id="all-fonts-link-font-quicksand" rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&display=swap"><style id="all-fonts-style-font-quicksand">.font-quicksand { font-family: 'Quicksand', sans-serif !important; }</style><link id="all-fonts-link-font-nunito" rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;500;600;700;800&display=swap"><style id="all-fonts-style-font-nunito">.font-nunito { font-family: 'Nunito', sans-serif !important; }</style><link id="all-fonts-link-font-newsreader" rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Newsreader:opsz,wght@6..72,400..800&display=swap"><style id="all-fonts-style-font-newsreader">.font-newsreader { font-family: 'Newsreader', serif !important; }</style><link id="all-fonts-link-font-google-sans-flex" rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Google+Sans+Flex:wght@400;500;600;700&display=swap"><style id="all-fonts-style-font-google-sans-flex">.font-google-sans-flex { font-family: 'Google Sans Flex', sans-serif !important; }</style><link id="all-fonts-link-font-oswald" rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Oswald:wght@300;400;500;600;700&display=swap"><style id="all-fonts-style-font-oswald">.font-oswald { font-family: 'Oswald', sans-serif !important; }</style><link id="all-fonts-link-font-dm-sans" rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600;700&display=swap"><style id="all-fonts-style-font-dm-sans">.font-dm-sans { font-family: 'DM Sans', sans-serif !important; }</style></head>
+<body class="bg-white text-gray-800 font-light selection:bg-purple-100 selection:text-purple-900">
+  <!-- Navigation -->
+  <nav class="container sticky bg-white/80 z-50 border-gray-100 border-b mr-auto ml-auto pt-6 pr-6 pb-6 pl-6 top-0 backdrop-blur-md">
+    <div class="flex items-center justify-between">
+      <div class="flex items-center">
+        <svg class="h-8 w-8 text-purple-600" viewBox="0 0 24 24" fill="currentColor">
+          <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8z" class=""></path>
+        </svg>
+        <span class="text-xl font-medium tracking-tight ml-3">Build Grow Exit</span>
+      </div>
+      <div class="hidden md:flex space-x-10 text-sm text-gray-600">
+        
+        
+        
+        
+      </div>
+      <div class="">
+        <button class="hover:bg-purple-50 transition-all text-sm font-medium border-gray-300 border rounded-md pt-2 pr-4 pb-2 pl-4" onclick="window.location.href='https://mpago.la/25GnKJK'" role="button">COMPRA 100 MODELOS DE DINERO</button>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <div class="overflow-hidden md:pt-20 pt-12 relative">
+    <!-- Background gradient -->
+    <div class="absolute inset-0 bg-gradient-to-br from-purple-100/40 via-white to-white z-0 pointer-events-none"></div>
+    
+    <div class="container z-10 mr-auto ml-auto pr-6 pl-6 relative">
+      <div class="flex flex-col md:flex-row items-center"><img src="https://hoirqrkdgbmvpwutwuwj.supabase.co/storage/v1/object/public/assets/assets/e77cf30c-6d8e-483c-a95b-b5c364909853_3840w.png" alt="Container background" class="w-full h-full max-w-xs object-cover absolute top-0 right-0 bottom-0 left-0" data-container-bg="true">
+        <!-- Text content -->
+        <div class="md:w-1/2 md:mb-0 md:pr-12 mb-12">
+          <div class="inline-block px-3 py-1 mb-4 text-xs font-semibold tracking-wider text-purple-600 uppercase bg-purple-100 rounded-full">
+            Online Education
+          </div>
+          
+          
+          <div class="flex flex-col sm:flex-row gap-4">
+            <button class="hover:bg-purple-700 transition-all shadow-purple-200 font-medium text-white bg-purple-600 rounded-md pt-3 pr-8 pb-3 pl-8 shadow-lg" onclick="window.location.href='https://calendly.com/saintknowledge/business-diagnosis-call'" role="button">
+              Join Waiting List
+            </button>
+          </div>
+        </div>
+        i
+        <!-- Globe visualization -->
+        <div class="md:w-1/2 flex relative justify-center">
+          <div class="relative h-[500px] w-[500px]">
+            <div class="bg-gradient-to-r from-purple-300/20 to-pink-300/20 rounded-full absolute top-0 right-0 bottom-0 left-0 blur-3xl">
+</div>
+            
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="h-px bg-gradient-to-r from-transparent via-gray-200 to-transparent"></div>
+
+  <!-- Grow / Exit Section -->
+  <section class="bg-white pt-24 pb-24" id="grow">
+    <div class="container mx-auto px-6">
+      <div class="grid md:grid-cols-2 gap-16">
+        <div class="group p-8 border border-gray-100 rounded-2xl hover:border-purple-100 hover:shadow-xl hover:shadow-purple-50 transition-all duration-500">
+          <div class="h-12 w-12 bg-purple-50 rounded-lg flex items-center justify-center mb-6 text-purple-600">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-lucide="trending-up" aria-hidden="true" class="lucide lucide-trending-up w-6 h-6"><path d="M16 7h6v6"></path><path d="m22 7-8.5 8.5-5-5L2 17"></path></svg>
+          </div>
+          <h3 class="text-3xl tracking-tight mb-4 font-normal">GROW</h3>
+          <p class="text-gray-600 font-light leading-relaxed mb-6">
+            Grow your online business to $100K+ per-month by systemising operations and scaling revenue as you reach more people, deliver more value and impact the world.
+          </p>
+          <a href="#" class="text-sm font-medium text-purple-600 flex items-center group-hover:translate-x-1 transition-transform">
+            Join Waiting List <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-lucide="arrow-right" aria-hidden="true" class="lucide lucide-arrow-right w-4 h-4 ml-1"><path d="M5 12h14"></path><path d="m12 5 7 7-7 7"></path></svg>
+          </a>
+        </div>
+
+        <div class="group p-8 border border-gray-100 rounded-2xl hover:border-purple-100 hover:shadow-xl hover:shadow-purple-50 transition-all duration-500">
+          <div class="h-12 w-12 bg-pink-50 rounded-lg flex items-center justify-center mb-6 text-pink-600">
+             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-lucide="door-open" aria-hidden="true" class="lucide lucide-door-open w-6 h-6"><path d="M11 20H2"></path><path d="M11 4.562v16.157a1 1 0 0 0 1.242.97L19 20V5.562a2 2 0 0 0-1.515-1.94l-4-1A2 2 0 0 0 11 4.561z"></path><path d="M11 4H8a2 2 0 0 0-2 2v14"></path><path d="M14 12h.01"></path><path d="M22 20h-3"></path></svg>
+          </div>
+          <h3 class="text-3xl tracking-tight mb-4 font-normal">EXIT</h3>
+          <p class="text-gray-600 font-light leading-relaxed mb-6">
+            Exit your online education business. Sell it for a seven, multi-seven or even an eight-figure sum. Enjoy your wealth and feel the fulfilment of having built something great.
+          </p>
+          <a href="#" class="text-sm font-medium text-pink-600 flex items-center group-hover:translate-x-1 transition-transform">
+            Join Waiting List <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-lucide="arrow-right" aria-hidden="true" class="lucide lucide-arrow-right w-4 h-4 ml-1"><path d="M5 12h14"></path><path d="m12 5 7 7-7 7"></path></svg>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 4 Core Elements -->
+  <section class="py-24 bg-gray-50 border-y border-gray-200">
+    <div class="container mx-auto px-6">
+      <div class="text-center mb-16 max-w-2xl mx-auto">
+        <h2 class="text-3xl md:text-4xl font-light tracking-tight mb-4">There Are Four Core Elements</h2>
+        <p class="text-gray-500 font-light">To a Successful Online Education Business...</p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+        <!-- Traffic -->
+        <div class="bg-white p-6 rounded-xl border border-gray-100 hover:shadow-lg transition-shadow">
+          <div class="mb-4 text-purple-600"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-lucide="users" aria-hidden="true" class="lucide lucide-users w-8 h-8"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"></path><path d="M16 3.128a4 4 0 0 1 0 7.744"></path><path d="M22 21v-2a4 4 0 0 0-3-3.87"></path><circle cx="9" cy="7" r="4"></circle></svg></div>
+          <h4 class="text-lg font-medium mb-2">Traffic</h4>
+          <p class="text-sm text-gray-500 font-light leading-relaxed">
+            You need to get eyeballs on you, and what you have to offer. You'll do this using organic traffic sources i.e. YouTube, Instagram or TikTok, or paid traffic sources.
+          </p>
+        </div>
+        
+        <!-- Sales Process -->
+        <div class="bg-white p-6 rounded-xl border border-gray-100 hover:shadow-lg transition-shadow">
+          <div class="mb-4 text-purple-600"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-lucide="arrow-left-right" aria-hidden="true" class="lucide lucide-arrow-left-right w-8 h-8"><path d="M8 3 4 7l4 4"></path><path d="M4 7h16"></path><path d="m16 21 4-4-4-4"></path><path d="M20 17H4"></path></svg></div>
+          <h4 class="text-lg font-medium mb-2">Sales Process</h4>
+          <p class="text-sm text-gray-500 font-light leading-relaxed">
+            Send traffic into a sales process suited to your offer. This conveys the value you have to offer, resulting in a sale or an appointment.
+          </p>
+        </div>
+
+        <!-- Conversion -->
+        <div class="bg-white p-6 rounded-xl border border-gray-100 hover:shadow-lg transition-shadow">
+          <div class="mb-4 text-purple-600"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-lucide="refresh-ccw" aria-hidden="true" class="lucide lucide-refresh-ccw w-8 h-8"><path d="M21 12a9 9 0 0 0-9-9 9.75 9.75 0 0 0-6.74 2.74L3 8"></path><path d="M3 3v5h5"></path><path d="M3 12a9 9 0 0 0 9 9 9.75 9.75 0 0 0 6.74-2.74L21 16"></path><path d="M16 16h5v5"></path></svg></div>
+          <h4 class="text-lg font-medium mb-2">Conversion</h4>
+          <p class="text-sm text-gray-500 font-light leading-relaxed">
+            Trigger conversion into paying customers and lifelong fans. Usually takes place through a sales call or a sales page.
+          </p>
+        </div>
+
+        <!-- Value -->
+        <div class="bg-white p-6 rounded-xl border border-gray-100 hover:shadow-lg transition-shadow">
+          <div class="mb-4 text-purple-600"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-lucide="heart" aria-hidden="true" class="lucide lucide-heart w-8 h-8"><path d="M2 9.5a5.5 5.5 0 0 1 9.591-3.676.56.56 0 0 0 .818 0A5.49 5.49 0 0 1 22 9.5c0 2.29-1.5 4-3 5.5l-5.492 5.313a2 2 0 0 1-3 .019L5 15c-1.5-1.5-3-3.2-3-5.5"></path></svg></div>
+          <h4 class="text-lg font-medium mb-2">Value</h4>
+          <p class="text-sm text-gray-500 font-light leading-relaxed">
+            With a few thousand dollars added to your bank balance and a new customer onboarded, provide value and help them get the promised result.
+          </p>
+        </div>
+      </div>
+      
+      <div class="text-center mt-12">
+        <button class="hover:bg-gray-50 transition-all font-medium text-gray-700 bg-white border-gray-300 border rounded-md pt-3 pr-6 pb-3 pl-6" onclick="window.location.href='https://calendly.com/saintknowledge/business-diagnosis-call'" role="button">
+          Join Waiting List
+        </button>
+      </div>
+    </div>
+  </section>
+
+  <!-- Comparison Section -->
+  <section class="py-24">
+    <div class="container mx-auto px-6">
+      <h2 class="md:text-4xl text-3xl font-light tracking-tight text-center mb-16">Why You Have to Get It Just Right</h2>
+      
+      <div class="grid md:grid-cols-2 gap-8 max-w-5xl mx-auto">
+        <!-- Properly -->
+        <div class="bg-gradient-to-b from-purple-50 to-white border border-purple-100 p-8 rounded-2xl relative overflow-hidden">
+          <div class="absolute top-0 right-0 w-32 h-32 bg-purple-200/20 rounded-bl-full"></div>
+          <div class="text-green-600 font-semibold mb-2 flex items-center gap-2">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-lucide="check-circle-2" aria-hidden="true" class="lucide lucide-check-circle-2 w-5 h-5"><circle cx="12" cy="12" r="10"></circle><path d="m9 12 2 2 4-4"></path></svg> If Built Properly
+          </div>
+          <p class="text-5xl font-light tracking-tight text-gray-900 mb-2">6 Figures+</p>
+          <p class="text-sm text-gray-400 uppercase tracking-widest mb-6">Per Month</p>
+          <p class="leading-relaxed font-light text-gray-600">You will sail past five and six figures per month as if you’re Jeff Bezos on his star-liner in the Caribbean. How do we know? Our founder Mark has done it many times over, and so have our clients.</p>
+        </div>
+
+        <!-- Improperly -->
+        <div class="bg-gray-50 border border-gray-200 p-8 rounded-2xl relative overflow-hidden">
+          <div class="text-red-500 font-semibold mb-2 flex items-center gap-2">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-lucide="x-circle" aria-hidden="true" class="lucide lucide-x-circle w-5 h-5"><circle cx="12" cy="12" r="10"></circle><path d="m15 9-6 6"></path><path d="m9 9 6 6"></path></svg> If Not Built Properly
+          </div>
+          <p class="text-5xl font-light tracking-tight text-gray-400 mb-2">0% Profit</p>
+          <p class="text-sm text-gray-400 uppercase tracking-widest mb-6">Struggle</p>
+          <p class="text-gray-600 font-light leading-relaxed">
+            You’ll be asking your parents to cover your rent whilst you read $100M Offers for the third time. We help you avoid this, and get it right first time, so you can make the money you deserve, now.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Marquee -->
+  <div class="border-y border-gray-200 bg-gray-50 py-6 overflow-hidden relative">
+    <div class="flex animate-scroll whitespace-nowrap w-[200%]">
+      <div class="flex space-x-12 mx-6">
+        <span class="text-2xl font-light tracking-widest text-gray-400">BUILD GROW EXIT</span>
+        <span class="text-2xl font-light tracking-widest text-gray-300">BUILD GROW EXIT</span>
+        <span class="text-2xl font-light tracking-widest text-gray-400">BUILD GROW EXIT</span>
+        <span class="text-2xl font-light tracking-widest text-gray-300">BUILD GROW EXIT</span>
+        <span class="text-2xl font-light tracking-widest text-gray-400">BUILD GROW EXIT</span>
+        <span class="text-2xl font-light tracking-widest text-gray-300">BUILD GROW EXIT</span>
+        <span class="text-2xl font-light tracking-widest text-gray-400">BUILD GROW EXIT</span>
+        <span class="text-2xl font-light tracking-widest text-gray-300">BUILD GROW EXIT</span>
+        <span class="text-2xl font-light tracking-widest text-gray-400">BUILD GROW EXIT</span>
+        <span class="text-2xl font-light tracking-widest text-gray-300">BUILD GROW EXIT</span>
+      </div>
+      <div class="flex space-x-12 mx-6">
+         <span class="text-2xl font-light tracking-widest text-gray-400">BUILD GROW EXIT</span>
+        <span class="text-2xl font-light tracking-widest text-gray-300">BUILD GROW EXIT</span>
+        <span class="text-2xl font-light tracking-widest text-gray-400">BUILD GROW EXIT</span>
+        <span class="text-2xl font-light tracking-widest text-gray-300">BUILD GROW EXIT</span>
+        <span class="text-2xl font-light tracking-widest text-gray-400">BUILD GROW EXIT</span>
+        <span class="text-2xl font-light tracking-widest text-gray-300">BUILD GROW EXIT</span>
+        <span class="text-2xl font-light tracking-widest text-gray-400">BUILD GROW EXIT</span>
+        <span class="text-2xl font-light tracking-widest text-gray-300">BUILD GROW EXIT</span>
+        <span class="text-2xl font-light tracking-widest text-gray-400">BUILD GROW EXIT</span>
+        <span class="text-2xl font-light tracking-widest text-gray-300">BUILD GROW EXIT</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- Why Work With Us Story -->
+  <section class="pt-24 pb-24 relative" id="story">
+    <div class="absolute inset-0 bg-gradient-to-b from-white via-purple-50/30 to-white pointer-events-none"></div>
+    <div class="container mx-auto px-6 max-w-4xl relative z-10">
+      <h2 class="text-4xl md:text-5xl font-light tracking-tighter mb-4 text-center">Why Work With Us?</h2>
+      <p class="font-light text-gray-500 text-center mb-16">Forbes Magazine highlighted the multi seven-figure acquisition of Mark e-learning company in 2023</p>
+      
+      <div class="space-y-12 border-l border-purple-200 ml-4 md:ml-0 pl-8 md:pl-0">
+        <!-- Item 1 -->
+        <div class="relative md:pl-12">
+            <span class="absolute -left-[41px] md:-left-5 top-0 flex h-10 w-10 items-center justify-center rounded-full bg-white border border-purple-200 text-purple-600 font-bold shadow-sm">01</span>
+            <p class="leading-relaxed text-lg font-light text-gray-600 mb-4">Seven years ago, Mark was a struggling musician living in his parents spare room, making $1,500 per-month on average. He was completely broke.</p>
+            <p class="leading-relaxed text-lg font-light text-gray-600 mb-4">
+                To solve his financial situation, he began learning to trade financial markets. A year or so later, he was asked by a friend to teach him what he was learning...
+            </p>
+            <p class="text-lg text-gray-600 font-light leading-relaxed mb-4">
+                He offered to pay him $50 to spend two hours with him, and he created a Word doc during the session to take away with him. That day, William's e-learning company was born.
+            </p>
+            <p class="leading-relaxed text-lg font-light text-gray-600">
+                The Word doc evolved into an e-book, then a Dropbox folder of videos and documents, then a full-blown online coaching program. The price evolved alongside the value from $50, to $500, to $5,000...
+            </p>
+        </div>
+
+        <!-- Item 2 -->
+        <div class="relative md:pl-12">
+            <span class="absolute -left-[41px] md:-left-5 top-0 flex h-10 w-10 items-center justify-center rounded-full bg-white border border-purple-200 text-purple-600 font-bold shadow-sm">02</span>
+            <p class="leading-relaxed text-lg font-light text-gray-600 mb-4">
+                Over the following seven years, he made over  selling online education, before selling his company to a private equity firm for millions more.
+            </p>
+            <div class="bg-purple-50 p-6 rounded-xl border border-purple-100 my-6">
+                <p class="italic text-purple-900 font-light text-center">"Building the company was fun, fulfilling, rewarding and made me a multi-millionaire by the time I turned 30"</p>
+            </div>
+             <p class="text-lg text-gray-600 font-light leading-relaxed mb-4">
+                Within his e-learning company, at the point he sold the business, he had 16 members of staff, had served over 4,000 clients globally across seven years, and owned one of the largest trading education companies on earth.
+            </p>
+             <p class="text-lg text-gray-600 font-light leading-relaxed">
+                Last year, he won the prestigious 'Two Comma Club X' award from ClickFunnels for collecting over $10,000,000 in cash.
+            </p>
+        </div>
+      </div>
+
+      <div class="mt-16 text-center">
+         <h3 class="text-2xl font-light mb-6">Want us to help you achieve the same?</h3>
+         <button class="hover:bg-black transition-all font-medium text-white bg-gray-900 rounded-md pt-4 pr-8 pb-4 pl-8 shadow-xl" onclick="window.location.href='https://calendly.com/saintknowledge/business-diagnosis-call'" role="button">
+            Book a call with us now
+        </button>
+      </div>
+    </div>
+  </section>
+
+  <!-- Mission Section -->
+  <section class="py-24 bg-gray-900 text-white relative overflow-hidden">
+     <!-- Abstract shapes -->
+     <div class="absolute top-0 right-0 w-[500px] h-[500px] bg-purple-900/30 rounded-full blur-[100px] pointer-events-none"></div>
+     <div class="absolute bottom-0 left-0 w-[300px] h-[300px] bg-blue-900/20 rounded-full blur-[80px] pointer-events-none"></div>
+
+     <div class="container mx-auto px-6 relative z-10">
+        <div class="flex flex-col md:flex-row gap-16">
+            <div class="md:w-1/2">
+                <h2 class="text-3xl md:text-4xl font-light tracking-tight mb-8">Why Are We Here, and What’s Our Mission?</h2>
+                <p class="leading-relaxed text-lg font-light text-gray-400 mb-6">Like 99% of other companies you'll find online, we're not just here to "make money". Our founder Mark is a multi-millionaire and he did it by doing exactly what he teaches.</p>
+                <p class="text-white text-xl font-normal border-l-2 border-purple-500 pl-4 py-2 my-8">
+                    Our mission is simple: Make learning from experts the new education system.
+                </p>
+            </div>
+            <div class="md:w-1/2 space-y-8">
+                <div class="">
+                    <h3 class="text-xl font-medium mb-3 text-purple-300">We Exist to Help Others</h3>
+                    <p class="text-gray-400 font-light">
+                        Do you want to make millions teaching others a skill or a talent that you possess? If so, you're in the right place. We are an impact-driven company who want to help great businesses, and great entrepreneurs like you to scale to the heights that you should be at.
+                    </p>
+                </div>
+                <div class="">
+                    <h3 class="text-xl font-medium mb-3 text-purple-300">From Newbie to $100K+</h3>
+                    <p class="text-gray-400 font-light">
+                        We've worked with world famous footballers, influencers with millions of followers, Hollywood composers and everyday people alike. Whether you aspire to $10K a month, $250K a month or even $1M a month plus, we can and will aid you in getting there.
+                    </p>
+                </div>
+            </div>
+        </div>
+     </div>
+  </section>
+
+  <!-- Final CTA -->
+  <section class="py-24 text-center">
+    <div class="container mx-auto px-6">
+        <h2 class="text-4xl font-light tracking-tighter mb-6">Ready to Build, Grow, and Exit?</h2>
+        <p class="text-gray-500 mb-8 max-w-xl mx-auto font-light">Wherever you are in the world, however big or small your audience, we can help you build your company.</p>
+        <button class="hover:bg-purple-700 transition-all shadow-purple-200 font-medium text-white bg-purple-600 rounded-md pt-4 pr-10 pb-4 pl-10 shadow-lg" onclick="window.location.href='https://calendly.com/saintknowledge/business-diagnosis-call'" role="button">
+            Join Waiting List
+        </button>
+    </div>
+  </section>
+
+  <footer class="border-t border-gray-100 py-12 bg-gray-50">
+    <div class="container mx-auto px-6 flex flex-col md:flex-row justify-between items-center text-xs text-gray-500 font-light">
+        <p>© 2024 Build Grow Exit. All rights reserved.</p>
+        <div class="flex space-x-6 mt-4 md:mt-0">
+            <a href="#" class="hover:text-purple-600">Privacy</a>
+            <a href="#" class="hover:text-purple-600">Terms</a>
+            <a href="#" class="hover:text-purple-600">Contact</a>
+        </div>
+    </div>
+  </footer>
+
+  <script type="module">
+    import createGlobe from 'https://cdn.skypack.dev/cobe'
+    lucide.createIcons();
+
+    let phi = 0
+    let canvas = document.getElementById("cobe")
+
+    const globe = createGlobe(canvas, {
+      devicePixelRatio: 2,
+      width: 1000,
+      height: 1000,
+      phi: 0,
+      theta: 0,
+      dark: 0,
+      diffuse: 1.2,
+      scale: 1,
+      mapSamples: 16000,
+      mapBrightness: 6,
+      baseColor: [0.8, 0.7, 0.9],
+      markerColor: [0.7, 0.3, 0.9],
+      glowColor: [0.8, 0.6, 0.9],
+      offset: [0, 0],
+      markers: [
+        { location: [37.7595, -122.4367], size: 0.03 },
+        { location: [40.7128, -74.006], size: 0.1 },
+        { location: [51.5074, -0.1278], size: 0.05 },
+        { location: [35.6762, 139.6503], size: 0.05 },
+        { location: [22.3193, 114.1694], size: 0.03 },
+        { location: [-33.8688, 151.2093], size: 0.03 },
+      ],
+      onRender: (state) => {
+        state.phi = phi
+        phi += 0.005
+      },
+    })
+  </script>
+</body></html>
