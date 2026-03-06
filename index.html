@@ -1,354 +1,131 @@
-<!DOCTYPE html>
-<html lang="es"><head>
+<html lang="en"><head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Construye Crece Vende</title>
+  <title>High Ticket Strategy</title>
   <script src="https://cdn.tailwindcss.com"></script>
-  <script src="https://unpkg.com/lucide@latest"></script>
-  <style>
-    @keyframes scroll {
-      0% { transform: translateX(0); }
-      100% { transform: translateX(-50%); }
-    }
-    .animate-scroll {
-      animation: scroll 20s linear infinite;
-    }
-  </style>
-<link id="all-fonts-link-font-geist" rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Geist:wght@300;400;500;600;700&display=swap"><style id="all-fonts-style-font-geist">.font-geist { font-family: 'Geist', sans-serif !important; }</style><link id="all-fonts-link-font-roboto" rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;600;700&display=swap"><style id="all-fonts-style-font-roboto">.font-roboto { font-family: 'Roboto', sans-serif !important; }</style><link id="all-fonts-link-font-montserrat" rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap"><style id="all-fonts-style-font-montserrat">.font-montserrat { font-family: 'Montserrat', sans-serif !important; }</style><link id="all-fonts-link-font-poppins" rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"><style id="all-fonts-style-font-poppins">.font-poppins { font-family: 'Poppins', sans-serif !important; }</style><link id="all-fonts-link-font-playfair" rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700;900&display=swap"><style id="all-fonts-style-font-playfair">.font-playfair { font-family: 'Playfair Display', serif !important; }</style><link id="all-fonts-link-font-instrument-serif" rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Instrument+Serif:wght@400;500;600;700&display=swap"><style id="all-fonts-style-font-instrument-serif">.font-instrument-serif { font-family: 'Instrument Serif', serif !important; }</style><link id="all-fonts-link-font-merriweather" rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Merriweather:wght@300;400;700;900&display=swap"><style id="all-fonts-style-font-merriweather">.font-merriweather { font-family: 'Merriweather', serif !important; }</style><link id="all-fonts-link-font-bricolage" rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@300;400;500;600;700&display=swap"><style id="all-fonts-style-font-bricolage">.font-bricolage { font-family: 'Bricolage Grotesque', sans-serif !important; }</style><link id="all-fonts-link-font-jakarta" rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap"><style id="all-fonts-style-font-jakarta">.font-jakarta { font-family: 'Plus Jakarta Sans', sans-serif !important; }</style><link id="all-fonts-link-font-manrope" rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600;700;800&display=swap"><style id="all-fonts-style-font-manrope">.font-manrope { font-family: 'Manrope', sans-serif !important; }</style><link id="all-fonts-link-font-space-grotesk" rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&display=swap"><style id="all-fonts-style-font-space-grotesk">.font-space-grotesk { font-family: 'Space Grotesk', sans-serif !important; }</style><link id="all-fonts-link-font-work-sans" rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Work+Sans:wght@300;400;500;600;700;800&display=swap"><style id="all-fonts-style-font-work-sans">.font-work-sans { font-family: 'Work Sans', sans-serif !important; }</style><link id="all-fonts-link-font-pt-serif" rel="stylesheet" href="https://fonts.googleapis.com/css2?family=PT+Serif:wght@400;700&display=swap"><style id="all-fonts-style-font-pt-serif">.font-pt-serif { font-family: 'PT Serif', serif !important; }</style><link id="all-fonts-link-font-geist-mono" rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Geist+Mono:wght@300;400;500;600;700&display=swap"><style id="all-fonts-style-font-geist-mono">.font-geist-mono { font-family: 'Geist Mono', monospace !important; }</style><link id="all-fonts-link-font-space-mono" rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&display=swap"><style id="all-fonts-style-font-space-mono">.font-space-mono { font-family: 'Space Mono', monospace !important; }</style><link id="all-fonts-link-font-quicksand" rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&display=swap"><style id="all-fonts-style-font-quicksand">.font-quicksand { font-family: 'Quicksand', sans-serif !important; }</style><link id="all-fonts-link-font-nunito" rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;500;600;700;800&display=swap"><style id="all-fonts-style-font-nunito">.font-nunito { font-family: 'Nunito', sans-serif !important; }</style><link id="all-fonts-link-font-newsreader" rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Newsreader:opsz,wght@6..72,400..800&display=swap"><style id="all-fonts-style-font-newsreader">.font-newsreader { font-family: 'Newsreader', serif !important; }</style><link id="all-fonts-link-font-google-sans-flex" rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Google+Sans+Flex:wght@400;500;600;700&display=swap"><style id="all-fonts-style-font-google-sans-flex">.font-google-sans-flex { font-family: 'Google Sans Flex', sans-serif !important; }</style><link id="all-fonts-link-font-oswald" rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Oswald:wght@300;400;500;600;700&display=swap"><style id="all-fonts-style-font-oswald">.font-oswald { font-family: 'Oswald', sans-serif !important; }</style><link id="all-fonts-link-font-dm-sans" rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600;700&display=swap"><style id="all-fonts-style-font-dm-sans">.font-dm-sans { font-family: 'DM Sans', sans-serif !important; }</style></head>
-<body class="selection:bg-purple-100 selection:text-purple-900 font-light text-gray-800 bg-white">
+</head>
+<body class="bg-white text-gray-800 font-light">
   <!-- Navigation -->
-  <nav class="container mx-auto px-6 py-6 sticky top-0 z-50 bg-white/80 backdrop-blur-md border-b border-gray-100">
+  <nav class="container mx-auto px-6 py-6">
     <div class="flex items-center justify-between">
       <div class="flex items-center">
         <svg class="h-8 w-8 text-purple-600" viewBox="0 0 24 24" fill="currentColor">
-          <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8z" class=""></path>
+          <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8z"></path>
         </svg>
-        <span class="text-xl font-medium tracking-tight ml-3">Construye Crece Vende</span>
+        <span class="ml-3 text-xl tracking-tight">HighTicket</span>
       </div>
       <div class="hidden md:flex space-x-10 text-sm text-gray-600">
-        
-        
-        
-        
+        <a href="#" class="hover:text-purple-600 transition-colors">The Strategy</a>
+        <a href="#" class="hover:text-purple-600 transition-colors">Funnels</a>
+        <a href="#" class="hover:text-purple-600 transition-colors">Authority</a>
+        <a href="#" class="hover:text-purple-600 transition-colors">Results</a>
       </div>
-      <div class="">
-        <button class="hover:bg-purple-50 transition-all text-sm font-medium border-gray-300 border rounded-md pt-2 pr-4 pb-2 pl-4" onclick="window.location.href='https://calendly.com/saintknowledge/business-diagnosis-call'" role="button">
-          Únete a la lista de espera
+      <div>
+        <button class="text-sm border border-gray-300 rounded-md px-4 py-2 hover:bg-purple-50 transition-all">
+          Apply Now
         </button>
       </div>
     </div>
   </nav>
 
-  <!-- Hero Section -->
-  <div class="relative overflow-hidden pt-12 md:pt-20">
+  <div class="h-px bg-gradient-to-r from-transparent via-gray-200 to-transparent"></div>
+
+  <div class="relative overflow-hidden">
     <!-- Background gradient -->
-    <div class="absolute inset-0 bg-gradient-to-br from-purple-100/40 via-white to-white z-0 pointer-events-none"></div>
+    <div class="absolute inset-0 bg-gradient-to-br from-purple-100/50 via-white to-white z-0"></div>
     
-    <div class="container mx-auto px-6 relative z-10">
+    <!-- Hero content -->
+    <div class="container mx-auto px-6 py-16 md:py-24 relative z-10">
       <div class="flex flex-col md:flex-row items-center">
         <!-- Text content -->
         <div class="md:w-1/2 mb-12 md:mb-0 md:pr-12">
-          <div class="inline-block px-3 py-1 mb-4 text-xs font-semibold tracking-wider text-purple-600 uppercase bg-purple-100 rounded-full">
-            Educación Online
-          </div>
-          <h1 class="text-5xl md:text-6xl lg:text-7xl font-light tracking-tighter mb-6 leading-[1.1]">
-            Construye un negocio de <span class="bg-clip-text text-transparent bg-gradient-to-r from-purple-600 to-pink-500 font-normal">educación online</span>.
+          <h1 class="text-5xl md:text-6xl lg:text-7xl font-light tracking-tighter mb-6 leading-tight">
+            Why <span class="bg-clip-text text-transparent bg-gradient-to-r from-purple-600 to-pink-500">High Ticket</span> Sales Are Essential
           </h1>
-          <p class="text-gray-600 text-lg md:text-xl mb-8 max-w-lg font-extralight tracking-wide leading-relaxed">
-            Gana más de $10K al mes haciendo lo que amas y compartiendo tus habilidades, conocimientos o talentos de alto valor con otras personas.
+          <p class="text-gray-600 text-xl md:text-2xl mb-8 max-w-lg font-extralight tracking-wide">
+            Most people chase volume, hoping small sales add up. But the truth is simple: the effort required to sell a $50 product is often the same effort required to sell a $5,000 product.
           </p>
           <div class="flex flex-col sm:flex-row gap-4">
-            <button class="hover:bg-purple-700 transition-all shadow-purple-200 font-medium text-white bg-purple-600 rounded-md pt-3 pr-8 pb-3 pl-8 shadow-lg" onclick="window.location.href='https://calendly.com/saintknowledge/business-diagnosis-call'" role="button">
-              Únete a la lista de espera
+            <button class="bg-purple-600 text-white font-light rounded-md px-6 py-3 hover:bg-purple-700 transition-all">
+              Start Scaling
+            </button>
+            <button class="bg-transparent border border-gray-300 text-gray-700 rounded-md px-6 py-3 hover:bg-purple-50 transition-all">
+              Read the strategy
             </button>
           </div>
         </div>
         
         <!-- Globe visualization -->
-        <div class="md:w-1/2 relative flex justify-center">
-  <div class="relative h-[500px] w-[500px]">
-    <div class="relative w-full h-screen">
-      <div class="relative w-full h-screen">
-        <!-- Glow blanco difuminado -->
-        <div class="bg-gradient-to-r from-white/30 via-white/20 to-white/30 rounded-full absolute top-0 right-0 bottom-0 left-0 blur-3xl">
-        </div>
-
-        <!-- Aquí va tu contenido encima del glow -->
-        <div class="z-10 pt-8 pr-8 pb-8 pl-8 relative">
-
-
-        </div>
-      </div>
-    </div>
-    <div class="w-64 h-64 relative">
-      <div class="bg-gradient-to-r from-purple-300/40 to-pink-300/40 rounded-full absolute top-0 right-0 bottom-0 left-0 blur-3xl">
-      </div>
-    </div>
-  </div>
-</div>
-      </div>
-    </div>
-  </div>
-
-  <div class="h-px bg-gradient-to-r from-transparent via-gray-200 to-transparent"></div>
-
-  <!-- Grow / Exit Section -->
-  <section class="py-24 bg-white" id="grow">
-    <div class="container mx-auto px-6">
-      <div class="grid md:grid-cols-2 gap-16">
-        <div class="group p-8 border border-gray-100 rounded-2xl hover:border-purple-100 hover:shadow-xl hover:shadow-purple-50 transition-all duration-500">
-          <div class="h-12 w-12 bg-purple-50 rounded-lg flex items-center justify-center mb-6 text-purple-600">
-            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-lucide="trending-up" class="lucide lucide-trending-up w-6 h-6"><path d="M16 7h6v6"></path><path d="m22 7-8.5 8.5-5-5L2 17"></path></svg>
+        <div class="md:w-1/2 relative">
+          <div class="relative h-[500px] w-[500px] mx-auto">
+            <div class="absolute inset-0 bg-gradient-to-r from-purple-300/20 to-pink-300/20 rounded-full blur-3xl"></div>
+            <canvas id="cobe" style="width: 500px; height: 500px" width="1000" height="1000" class="relative z-10"></canvas>
           </div>
-          <h3 class="text-3xl tracking-tight mb-4 font-normal">CRECE</h3>
-          <p class="text-gray-600 font-light leading-relaxed mb-6">
-            Haz crecer tu negocio online a más de $100K al mes sistematizando operaciones y escalando ingresos a medida que llegas a más personas, entregas más valor e impactas al mundo.
-          </p>
-          <a href="#" class="text-sm font-medium text-purple-600 flex items-center group-hover:translate-x-1 transition-transform">
-            Únete a la lista de espera <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-lucide="arrow-right" class="lucide lucide-arrow-right w-4 h-4 ml-1"><path d="M5 12h14"></path><path d="m12 5 7 7-7 7"></path></svg>
-          </a>
-        </div>
-
-        <div class="group p-8 border border-gray-100 rounded-2xl hover:border-purple-100 hover:shadow-xl hover:shadow-purple-50 transition-all duration-500">
-          <div class="h-12 w-12 bg-pink-50 rounded-lg flex items-center justify-center mb-6 text-pink-600">
-             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-lucide="door-open" class="lucide lucide-door-open w-6 h-6"><path d="M11 20H2"></path><path d="M11 4.562v16.157a1 1 0 0 0 1.242.97L19 20V5.562a2 2 0 0 0-1.515-1.94l-4-1A2 2 0 0 0 11 4.561z"></path><path d="M11 4H8a2 2 0 0 0-2 2v14"></path><path d="M14 12h.01"></path><path d="M22 20h-3"></path></svg>
-          </div>
-          <h3 class="text-3xl tracking-tight mb-4 font-normal">VENDE</h3>
-          <p class="text-gray-600 font-light leading-relaxed mb-6">
-            Haz tu salida (exit) de tu negocio de educación online. Véndelo por una suma de siete, múltiples siete o incluso ocho cifras. Disfruta de tu riqueza y siente la satisfacción de haber construido algo increíble.
-          </p>
-          <a href="#" class="text-sm font-medium text-pink-600 flex items-center group-hover:translate-x-1 transition-transform">
-            Únete a la lista de espera <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-lucide="arrow-right" class="lucide lucide-arrow-right w-4 h-4 ml-1"><path d="M5 12h14"></path><path d="m12 5 7 7-7 7"></path></svg>
-          </a>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- 4 Core Elements -->
-  <section class="py-24 bg-gray-50 border-y border-gray-200">
-    <div class="container mx-auto px-6">
-      <div class="text-center mb-16 max-w-2xl mx-auto">
-        <h2 class="text-3xl md:text-4xl font-light tracking-tight mb-4">Hay Cuatro Elementos Clave</h2>
-        <p class="text-gray-500 font-light">Para Un Negocio De Educación Online Exitoso...</p>
-      </div>
-
-      <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
-        <!-- Traffic -->
-        <div class="bg-white p-6 rounded-xl border border-gray-100 hover:shadow-lg transition-shadow">
-          <div class="mb-4 text-purple-600"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-lucide="users" class="lucide lucide-users w-8 h-8"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"></path><path d="M16 3.128a4 4 0 0 1 0 7.744"></path><path d="M22 21v-2a4 4 0 0 0-3-3.87"></path><circle cx="9" cy="7" r="4"></circle></svg></div>
-          <h4 class="text-lg font-medium mb-2">Tráfico</h4>
-          <p class="text-sm text-gray-500 font-light leading-relaxed">
-            Necesitas atraer miradas hacia ti y lo que tienes para ofrecer. Lo harás utilizando fuentes de tráfico orgánico, por ejemplo, YouTube, Instagram o TikTok, o fuentes de tráfico de pago.
-          </p>
-        </div>
-        
-        <!-- Sales Process -->
-        <div class="bg-white p-6 rounded-xl border border-gray-100 hover:shadow-lg transition-shadow">
-          <div class="mb-4 text-purple-600"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-lucide="arrow-left-right" class="lucide lucide-arrow-left-right w-8 h-8"><path d="M8 3 4 7l4 4"></path><path d="M4 7h16"></path><path d="m16 21 4-4-4-4"></path><path d="M20 17H4"></path></svg></div>
-          <h4 class="text-lg font-medium mb-2">Proceso de Ventas</h4>
-          <p class="text-sm text-gray-500 font-light leading-relaxed">
-            Envía el tráfico a un proceso de ventas adaptado a tu oferta. Esto transmite el valor que tienes para ofrecer, lo que resulta en una venta o una cita.
-          </p>
-        </div>
-
-        <!-- Conversion -->
-        <div class="bg-white p-6 rounded-xl border border-gray-100 hover:shadow-lg transition-shadow">
-          <div class="mb-4 text-purple-600"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-lucide="refresh-ccw" class="lucide lucide-refresh-ccw w-8 h-8"><path d="M21 12a9 9 0 0 0-9-9 9.75 9.75 0 0 0-6.74 2.74L3 8"></path><path d="M3 3v5h5"></path><path d="M3 12a9 9 0 0 0 9 9 9.75 9.75 0 0 0 6.74-2.74L21 16"></path><path d="M16 16h5v5"></path></svg></div>
-          <h4 class="text-lg font-medium mb-2">Conversión</h4>
-          <p class="text-sm text-gray-500 font-light leading-relaxed">
-            Genera la conversión a clientes de pago y fans de por vida. Por lo general, se lleva a cabo a través de una llamada o una página de ventas.
-          </p>
-        </div>
-
-        <!-- Value -->
-        <div class="bg-white p-6 rounded-xl border border-gray-100 hover:shadow-lg transition-shadow">
-          <div class="mb-4 text-purple-600"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-lucide="heart" class="lucide lucide-heart w-8 h-8"><path d="M2 9.5a5.5 5.5 0 0 1 9.591-3.676.56.56 0 0 0 .818 0A5.49 5.49 0 0 1 22 9.5c0 2.29-1.5 4-3 5.5l-5.492 5.313a2 2 0 0 1-3 .019L5 15c-1.5-1.5-3-3.2-3-5.5"></path></svg></div>
-          <h4 class="text-lg font-medium mb-2">Valor</h4>
-          <p class="text-sm text-gray-500 font-light leading-relaxed">
-            Con unos miles de dólares más en tu cuenta bancaria y un nuevo cliente incorporado, proporciona valor y ayúdalo a obtener el resultado prometido.
-          </p>
         </div>
       </div>
       
-      <div class="text-center mt-12">
-        <button class="hover:bg-gray-50 transition-all font-medium text-gray-700 bg-white border-gray-300 border rounded-md pt-3 pr-6 pb-3 pl-6" onclick="window.location.href='https://calendly.com/saintknowledge/business-diagnosis-call'" role="button">
-          Únete a la lista de espera
-        </button>
-      </div>
-    </div>
-  </section>
-
-  <!-- Comparison Section -->
-  <section class="py-24">
-    <div class="container mx-auto px-6">
-      <h2 class="md:text-4xl text-3xl font-light tracking-tight text-center mb-16">Por Qué Tienes Que Hacerlo Exactamente Bien</h2>
+      <div class="h-px bg-gradient-to-r from-transparent via-gray-200 to-transparent my-16"></div>
       
-      <div class="grid md:grid-cols-2 gap-8 max-w-5xl mx-auto">
-        <!-- Properly -->
-        <div class="bg-gradient-to-b from-purple-50 to-white border border-purple-100 p-8 rounded-2xl relative overflow-hidden">
-          <div class="absolute top-0 right-0 w-32 h-32 bg-purple-200/20 rounded-bl-full"></div>
-          <div class="text-green-600 font-semibold mb-2 flex items-center gap-2">
-            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-lucide="check-circle-2" class="lucide lucide-check-circle-2 w-5 h-5"><circle cx="12" cy="12" r="10"></circle><path d="m9 12 2 2 4-4"></path></svg> Si Se Construye Correctamente
-          </div>
-          <p class="text-5xl font-light tracking-tight text-gray-900 mb-2">+6 Cifras</p>
-          <p class="text-sm text-gray-400 uppercase tracking-widest mb-6">Al Mes</p>
-          <p class="leading-relaxed font-light text-gray-600">Superarás las cinco y seis cifras al mes como si fueras Jeff Bezos en su yate por el Caribe. ¿Cómo lo sabemos? Nuestro fundador Fede lo ha hecho muchas veces, y también nuestros clientes.</p>
+      <!-- Stats -->
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-6">
+        <div>
+          <p class="text-4xl font-light mb-1 tracking-tight text-gray-800">High</p>
+          <p class="text-gray-500 font-extralight">Return on effort</p>
         </div>
-
-        <!-- Improperly -->
-        <div class="bg-gray-50 border border-gray-200 p-8 rounded-2xl relative overflow-hidden">
-          <div class="text-red-500 font-semibold mb-2 flex items-center gap-2">
-            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-lucide="x-circle" class="lucide lucide-x-circle w-5 h-5"><circle cx="12" cy="12" r="10"></circle><path d="m15 9-6 6"></path><path d="m9 9 6 6"></path></svg> Si No Se Construye Correctamente
-          </div>
-          <p class="text-5xl font-light tracking-tight text-gray-400 mb-2">0% Ganancia</p>
-          <p class="text-sm text-gray-400 uppercase tracking-widest mb-6">Dificultades</p>
-          <p class="text-gray-600 font-light leading-relaxed">
-            Le estarás pidiendo a tus padres que te paguen el alquiler mientras lees $100M Offers por tercera vez. Te ayudamos a evitar esto y hacerlo bien a la primera, para que puedas ganar el dinero que te mereces, ahora.
-          </p>
+        <div>
+          <p class="text-4xl font-light mb-1 tracking-tight text-gray-800">Fewer</p>
+          <p class="text-gray-500 font-extralight">Transactions needed</p>
         </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Marquee -->
-  <div class="border-y border-gray-200 bg-gray-50 py-6 overflow-hidden relative">
-    <div class="flex animate-scroll whitespace-nowrap w-[200%]">
-      <div class="flex space-x-12 mx-6">
-        <span class="text-2xl font-light tracking-widest text-gray-400">CONSTRUYE CRECE VENDE</span>
-        <span class="text-2xl font-light tracking-widest text-gray-300">CONSTRUYE CRECE VENDE</span>
-        <span class="text-2xl font-light tracking-widest text-gray-400">CONSTRUYE CRECE VENDE</span>
-        <span class="text-2xl font-light tracking-widest text-gray-300">CONSTRUYE CRECE VENDE</span>
-        <span class="text-2xl font-light tracking-widest text-gray-400">CONSTRUYE CRECE VENDE</span>
-        <span class="text-2xl font-light tracking-widest text-gray-300">CONSTRUYE CRECE VENDE</span>
-        <span class="text-2xl font-light tracking-widest text-gray-400">CONSTRUYE CRECE VENDE</span>
-        <span class="text-2xl font-light tracking-widest text-gray-300">CONSTRUYE CRECE VENDE</span>
-        <span class="text-2xl font-light tracking-widest text-gray-400">CONSTRUYE CRECE VENDE</span>
-        <span class="text-2xl font-light tracking-widest text-gray-300">CONSTRUYE CRECE VENDE</span>
-      </div>
-      <div class="flex space-x-12 mx-6">
-         <span class="text-2xl font-light tracking-widest text-gray-400">CONSTRUYE CRECE VENDE</span>
-        <span class="text-2xl font-light tracking-widest text-gray-300">CONSTRUYE CRECE VENDE</span>
-        <span class="text-2xl font-light tracking-widest text-gray-400">CONSTRUYE CRECE VENDE</span>
-        <span class="text-2xl font-light tracking-widest text-gray-300">CONSTRUYE CRECE VENDE</span>
-        <span class="text-2xl font-light tracking-widest text-gray-400">CONSTRUYE CRECE VENDE</span>
-        <span class="text-2xl font-light tracking-widest text-gray-300">CONSTRUYE CRECE VENDE</span>
-        <span class="text-2xl font-light tracking-widest text-gray-400">CONSTRUYE CRECE VENDE</span>
-        <span class="text-2xl font-light tracking-widest text-gray-300">CONSTRUYE CRECE VENDE</span>
-        <span class="text-2xl font-light tracking-widest text-gray-400">CONSTRUYE CRECE VENDE</span>
-        <span class="text-2xl font-light tracking-widest text-gray-300">CONSTRUYE CRECE VENDE</span>
+        <div>
+          <p class="text-4xl font-light mb-1 tracking-tight text-gray-800">100%</p>
+          <p class="text-gray-500 font-extralight">Committed buyers</p>
+        </div>
+        <div>
+          <p class="text-4xl font-light mb-1 tracking-tight text-gray-800">Scale</p>
+          <p class="text-gray-500 font-extralight">Profitable business</p>
+        </div>
       </div>
     </div>
   </div>
 
-  <!-- Why Work With Us Story -->
-  <section class="pt-24 pb-24 relative" id="story">
-    <div class="absolute inset-0 bg-gradient-to-b from-white via-purple-50/30 to-white pointer-events-none"></div>
-    <div class="container mx-auto px-6 max-w-4xl relative z-10">
-      <h2 class="text-4xl md:text-5xl font-light tracking-tighter mb-4 text-center">¿Por Qué Trabajar Con Nosotros?</h2>
-      <p class="font-light text-gray-500 text-center mb-16">La revista Forbes destacó la adquisición multimillonaria de la empresa de e-learning de Fede en 2023</p>
+  <!-- Article Content -->
+  <div class="container mx-auto px-6 py-16 md:py-24">
+    <div class="max-w-3xl mx-auto space-y-8 text-lg md:text-xl text-gray-600 font-light leading-relaxed">
+      <p>
+        This is why high ticket sales are one of the most powerful strategies in modern online business.
+      </p>
+      <p>
+        High ticket sales allow you to generate significant revenue with fewer transactions. Instead of relying on thousands of small customers, you focus on serving a smaller group of serious buyers who are ready to invest in real solutions.
+      </p>
       
-      <div class="space-y-12 border-l border-purple-200 ml-4 md:ml-0 pl-8 md:pl-0">
-        <!-- Item 1 -->
-        <div class="relative md:pl-12">
-            <span class="absolute -left-[41px] md:-left-5 top-0 flex h-10 w-10 items-center justify-center rounded-full bg-white border border-purple-200 text-purple-600 font-bold shadow-sm">01</span>
-            <p class="leading-relaxed text-lg font-light text-gray-600 mb-4">Hace siete años, Fede era un músico con dificultades que vivía en la habitación libre de sus padres, ganando en promedio $1,500 al mes. Estaba completamente en bancarrota.</p>
-            <p class="leading-relaxed text-lg font-light text-gray-600 mb-4">
-                Para resolver su situación financiera, comenzó a aprender a operar en los mercados financieros. Un año más tarde, un amigo le pidió que le enseñara lo que estaba aprendiendo...
-            </p>
-            <p class="text-lg text-gray-600 font-light leading-relaxed mb-4">
-                Le ofreció pagarle $50 por pasar dos horas con él, y creó un documento de Word durante la sesión para llevárselo. Ese día, nació la empresa de e-learning.
-            </p>
-            <p class="leading-relaxed text-lg font-light text-gray-600">
-                El documento de Word evolucionó a un e-book, luego a una carpeta de Dropbox con videos y documentos, y después a un programa completo de coaching online. El precio evolucionó junto con el valor de $50, a $500, a $5,000...
-            </p>
-        </div>
+      <h2 class="text-3xl font-light tracking-tight text-gray-900 mt-16 mb-6">The key advantage is return on effort.</h2>
+      
+      <p>
+        Your time, focus, and energy are limited resources. If you're going to spend hours creating marketing campaigns, building funnels, writing emails, and generating traffic, it makes far more sense to promote products or services that can produce meaningful revenue per sale.
+      </p>
+      <p>
+        High ticket sales also attract a different type of customer. These buyers are typically more committed, more serious about results, and more willing to invest in quality solutions that solve real problems.
+      </p>
 
-        <!-- Item 2 -->
-        <div class="relative md:pl-12">
-            <span class="absolute -left-[41px] md:-left-5 top-0 flex h-10 w-10 items-center justify-center rounded-full bg-white border border-purple-200 text-purple-600 font-bold shadow-sm">02</span>
-            <p class="leading-relaxed text-lg font-light text-gray-600 mb-4">
-                Durante los siguientes siete años, ganó muchísimo dinero vendiendo educación online, antes de vender su empresa a una firma de capital privado por millones más.
-            </p>
-            <div class="bg-purple-50 p-6 rounded-xl border border-purple-100 my-6">
-                <p class="italic text-purple-900 font-light text-center">"Construir la empresa fue divertido, satisfactorio, gratificante y me convirtió en multimillonario antes de cumplir los 30"</p>
-            </div>
-             <p class="text-lg text-gray-600 font-light leading-relaxed mb-4">
-                Dentro de su empresa de e-learning, en el momento en que vendió el negocio, tenía 16 empleados, había atendido a más de 4,000 clientes a nivel mundial durante siete años y era dueño de una de las empresas de educación sobre trading más grandes del planeta.
-            </p>
-             <p class="text-lg text-gray-600 font-light leading-relaxed">
-                El año pasado, ganó el prestigioso premio 'Two Comma Club X' de ClickFunnels por facturar más de $10,000,000 en efectivo.
-            </p>
-        </div>
-      </div>
+      <h2 class="text-3xl font-light tracking-tight text-gray-900 mt-16 mb-6">A different approach to success.</h2>
 
-      <div class="mt-16 text-center">
-         <h3 class="text-2xl font-light mb-6">¿Quieres que te ayudemos a lograr lo mismo?</h3>
-         <button class="hover:bg-black transition-all font-medium text-white bg-gray-900 rounded-md pt-4 pr-8 pb-4 pl-8 shadow-xl" onclick="window.location.href='https://calendly.com/saintknowledge/business-diagnosis-call'" role="button">
-            Reserva una llamada con nosotros ahora
-        </button>
-      </div>
+      <p>
+        But success with high ticket sales requires a different approach. You must understand your niche deeply, identify high-value opportunities within that market, and build sales funnels designed specifically for high-value buyers. These customers require trust, credibility, authority, and clear communication of value.
+      </p>
+      <p>
+        When done correctly, high ticket sales create a scalable business model where a single sale can generate thousands of dollars in revenue.
+      </p>
+      <p>
+        Instead of working harder for small results, you work smarter by focusing on opportunities that maximize the value of your time.
+      </p>
+      <p>
+        In today's digital economy, high ticket sales are not just an option — they are one of the most efficient paths to building a profitable online business.
+      </p>
     </div>
-  </section>
-
-  <!-- Mission Section -->
-  <section class="py-24 bg-gray-900 text-white relative overflow-hidden">
-     <!-- Abstract shapes -->
-     <div class="absolute top-0 right-0 w-[500px] h-[500px] bg-purple-900/30 rounded-full blur-[100px] pointer-events-none"></div>
-     <div class="absolute bottom-0 left-0 w-[300px] h-[300px] bg-blue-900/20 rounded-full blur-[80px] pointer-events-none"></div>
-
-     <div class="container mx-auto px-6 relative z-10">
-        <div class="flex flex-col md:flex-row gap-16">
-            <div class="md:w-1/2">
-                <h2 class="text-3xl md:text-4xl font-light tracking-tight mb-8">¿Por Qué Estamos Aquí y Cuál es Nuestra Misión?</h2>
-                <p class="leading-relaxed text-lg font-light text-gray-400 mb-6">A diferencia del 99% de las otras empresas que encontrarás en línea, no estamos aquí solo para 'ganar dinero'. Nuestro fundador Fede es multimillonario y lo logró haciendo exactamente lo que enseña.</p>
-                <p class="text-white text-xl font-normal border-l-2 border-purple-500 pl-4 py-2 my-8">
-                    Nuestra misión es simple: Hacer que aprender de expertos sea el nuevo sistema educativo.
-                </p>
-            </div>
-            <div class="md:w-1/2 space-y-8">
-                <div class="">
-                    <h3 class="text-xl font-medium mb-3 text-purple-300">Existimos para Ayudar a Otros</h3>
-                    <p class="text-gray-400 font-light">
-                        ¿Quieres ganar millones enseñando a otros una habilidad o un talento que posees? Si es así, estás en el lugar correcto. Somos una empresa impulsada por el impacto que quiere ayudar a grandes negocios y grandes emprendedores como tú a escalar a las alturas en las que deberías estar.
-                    </p>
-                </div>
-                <div class="">
-                    <h3 class="text-xl font-medium mb-3 text-purple-300">De Principiante a +$100K</h3>
-                    <p class="text-gray-400 font-light">
-                        Hemos trabajado con futbolistas mundialmente famosos, influencers con millones de seguidores, compositores de Hollywood y personas comunes por igual. Ya sea que aspires a $10K al mes, $250K al mes o incluso más de $1M al mes, podemos ayudarte y te ayudaremos a llegar allí.
-                    </p>
-                </div>
-            </div>
-        </div>
-     </div>
-  </section>
-
-  <!-- Final CTA -->
-  <section class="py-24 text-center">
-    <div class="container mx-auto px-6">
-        <h2 class="text-4xl font-light tracking-tighter mb-6">¿Listo para Construir, Crecer y Vender?</h2>
-        <p class="text-gray-500 mb-8 max-w-xl mx-auto font-light">En cualquier parte del mundo en la que estés, por grande o pequeña que sea tu audiencia, podemos ayudarte a construir tu empresa.</p>
-        <button class="hover:bg-purple-700 transition-all shadow-purple-200 font-medium text-white bg-purple-600 rounded-md pt-4 pr-10 pb-4 pl-10 shadow-lg" onclick="window.location.href='https://calendly.com/saintknowledge/business-diagnosis-call'" role="button">
-            Únete a la lista de espera
-        </button>
-    </div>
-  </section>
-
-  <footer class="border-t border-gray-100 py-12 bg-gray-50">
-    <div class="container mx-auto px-6 flex flex-col md:flex-row justify-between items-center text-xs text-gray-500 font-light">
-        <p>© 2024 Construye Crece Vende. Todos los derechos reservados.</p>
-        <div class="flex space-x-6 mt-4 md:mt-0">
-            <a href="#" class="hover:text-purple-600">Privacidad</a>
-            <a href="#" class="hover:text-purple-600">Términos</a>
-            <a href="#" class="hover:text-purple-600">Contacto</a>
-        </div>
-    </div>
-  </footer>
+  </div>
 
   <script type="module">
     import createGlobe from 'https://cdn.skypack.dev/cobe'
-    lucide.createIcons();
 
     let phi = 0
     let canvas = document.getElementById("cobe")
